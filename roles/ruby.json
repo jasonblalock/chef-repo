@@ -1,0 +1,32 @@
+{
+  "name": "ruby",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "ruby-install" : {
+      "git_ref": "v0.5.0",
+      "rubies": [
+        {
+          "ruby": "ruby 2.2.3",
+          "gems": [
+            {
+              "name": "bundler"
+            }
+          ]
+        }
+      ]
+    }
+
+  },
+  "override_attributes": {
+
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[chruby_install]",
+    "recipe[ruby-install]"
+  ],
+  "env_run_lists": {
+
+  }
+}
